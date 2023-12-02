@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f1f1f1;
+        }
+
+        header {
+            background-color: #3498db;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-list {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-list li {
+            margin-right: 20px;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .nav-list a:hover {
+            color: #e74c3c;
+        }
+
+        .burger-menu {
+            display: none;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        nav.show .nav-list {
+            display: flex;
+        }
+
+        nav.show .burger-menu {
+            color: #e74c3c;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #3498db;
+            color: #fff;
+        }
+    </style>
+    <title>Responsive Design Example</title>
+</head>
+<body>
+    <header>
+        <h1>My Responsive Website</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger-menu">&#9776;</div>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Welcome to Our Website!</h2>
+            <p>This is some content on our webpage. It should adapt to different screen sizes.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 My Responsive Website</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const burgerMenu = document.querySelector('.burger-menu');
+            const navList = document.querySelector('.nav-list');
+
+            burgerMenu.addEventListener('click', function () {
+                navList.classList.toggle('show');
+            });
+
+            window.addEventListener('resize', function () {
+                if (window.innerWidth > 768) {
+                    navList.classList.remove('show');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
